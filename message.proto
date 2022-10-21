@@ -10,7 +10,7 @@ message Account {
   U256 balance = 1;
   U256 nonce = 2;
   H256 code_hash = 3;
-  H160 admin = 4;
+  RpcAddress admin = 4;
 }
 
 message EpochNumber {
@@ -29,7 +29,7 @@ message Block {
   H256 hash = 1;
   H256 parent_hash = 2;
   U256 height = 3;
-  H160 miner = 4;
+  RpcAddress miner = 4;
   H256 deferred_state_root = 5;
   H256 deferred_receipts_root = 6;
   H256 deferred_logs_bloom_hash = 7;
@@ -70,8 +70,8 @@ message BlockHashOrEpochNumber {
 }
 
 message CallRequest {
-  H160 from = 1;
-  H160 to = 2;
+  RpcAddress from = 1;
+  RpcAddress to = 2;
   U256 gas_price = 3;
   U256 gas = 4;
   U256 value = 5;
@@ -85,7 +85,7 @@ message Filter {
     repeated H256 block_hashes = 1;
   }
   message Address {
-    repeated H160 address = 1;
+    repeated RpcAddress address = 1;
   }
   message TopicOr {
     repeated H256 topics = 1;
@@ -105,7 +105,7 @@ message Filter {
 }
 
 message Log {
-  H160 address = 1;
+  RpcAddress address = 1;
   repeated H256 topics = 2;
   Bytes data = 3;
   H256 block_hash = 4;
@@ -121,12 +121,12 @@ message Transaction {
   U256 nonce = 2;
   H256 block_hash = 3;
   U256 transaction_index = 4;
-  H160 from = 5;
-  H160 to = 6;
+  RpcAddress from = 5;
+  RpcAddress to = 6;
   U256 value = 7;
   U256 gas_price = 8;
   U256 gas = 9;
-  H160 contract_created = 10;
+  RpcAddress contract_created = 10;
   Bytes data = 11;
   U256 epoch_height = 12;
   U256 chain_id = 13;
@@ -150,10 +150,10 @@ message Receipt {
   H256 block_hash = 3;
   // uint64 cannot be optional.
   EpochNumber epoch_number = 4;
-  H160 from = 5;
-  H160 to = 6;
+  RpcAddress from = 5;
+  RpcAddress to = 6;
   U256 gas_used = 7;
-  H160 contract_created = 8;
+  RpcAddress contract_created = 8;
   repeated Log logs = 9;
   bytes logs_bloom = 10;
   H256 state_root = 11;
