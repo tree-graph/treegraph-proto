@@ -52,7 +52,7 @@ message EpochNumberResponseGrpc {
 }
 
 message BalanceRequestGrpc {
-  H160 addr = 1;
+  RpcAddress addr = 1;
   EpochNumber epoch_number = 2;
 }
 message BalanceResponseGrpc {
@@ -60,15 +60,15 @@ message BalanceResponseGrpc {
 }
 
 message AdminRequestGrpc {
-  H160 addr = 1;
+  RpcAddress addr = 1;
   EpochNumber epoch_number = 2;
 }
 message AdminResponseGrpc {
-  H160 result = 1;
+  RpcAddress result = 1;
 }
 
 message CodeRequestGrpc {
-  H160 addr = 1;
+  RpcAddress addr = 1;
   EpochNumber epoch_number = 2;
 }
 message CodeResponseGrpc {
@@ -76,7 +76,7 @@ message CodeResponseGrpc {
 }
 
 message StorageAtRequestGrpc {
-  H160 addr = 1;
+  RpcAddress addr = 1;
   H256 pos = 2;
   EpochNumber epoch_number = 3;
 }
@@ -116,7 +116,7 @@ message BestBlockHashResponseGrpc {
 }
 
 message NextNonceRequestGrpc {
-  H160 addr = 1;
+  RpcAddress addr = 1;
   BlockHashOrEpochNumber epoch_number = 2;
 }
 message NextNonceResponseGrpc {
@@ -175,7 +175,7 @@ message TransactionReceiptResponseGrpc {
 }
 
 message AccountRequestGrpc {
-  H160 address = 1;
+  RpcAddress address = 1;
   EpochNumber epoch_num = 2;
 }
 message AccountResponseGrpc {

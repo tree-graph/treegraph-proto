@@ -15,7 +15,6 @@ message U128  { bytes bytes = 1; }
 message U256  { bytes bytes = 1; }
 
 message H64   { bytes bytes = 1; }
-message H160  { bytes bytes = 1; }
 message H256  { bytes bytes = 1; }
 message H512  { bytes bytes = 1; }
 message H520  { bytes bytes = 1; }
@@ -23,3 +22,5 @@ message H2048 { bytes bytes = 1; }
 
 // Placeholder for methods returning unit type.
 message Empty {}
+
+message RpcAddress { string base32_address = 1; }
